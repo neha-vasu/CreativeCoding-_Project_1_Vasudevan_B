@@ -10,59 +10,41 @@ var v = 1;
 function setup() {
   createCanvas(800, 800);
   angleMode(DEGREES);
-  background('#8ed6ef');
+  background('#fffadc');
+  frameRate (60)
 }
 
 function draw() {
- 
-
-//   background(220);
-//   stroke(4);
-//   fill(0);
-//   noStroke();
-//   beginShape();
-//   vertex(0, height);
-//   for(var x = 0; x < width; x++){
-//     //var angle = map(x, 0, width, 0, TWO_PI);
-//     var angle = offset + x * 0.01;
-//     // map x between 0 and width to 0 and Two Pi
-//     var y = map(degrees(sin(angle)), -strum, strum, vertOne, vertTwo);
-//     vertex(x, y);
-//   }
-//   vertex(width, height);
-//   endShape();
-//   offset += 0.1;
-//   if (vertOne <=5){
-//      v = -1;
-//      vertOne -= 0.5*v;
-//      vertTwo -= 0.5*v;
-//   } else if (vertOne >= width && v===-1){
-//     v = 1;
-//     vertOne -= 0.5*v;
-//     vertTwo -= 0.5*v;
-//   } else 
-//     {
-//     vertOne -= 0.5*v;
-//     vertTwo -= 0.5*v;
-//    }
+ clear()
+background('#00000');
+  
+  strokeWeight (5)
+stroke('#1d3475');
+  //leftside
+  line(random(0, 100), 300, random(0, 100), 300);
+    line(random(200, 400), 300, random(200, 400), 300);
+  line(random(500, 750), 300, random(500, 750), 300);
+  
+  //right side 
+  line(random(250, 400), 500, random(250, 400), 500);
+line(random(650, 850), 500, random(650, 850), 500);
+  
+  //Ground
+   line(random(-75, 100), 690, random(-75, 100), 690);
+   line(random(175, 250), 690, random(175, 250), 690);
+  line(random(475, 700), 690, random(475, 700), 690);
   
   
-//   clear();
-//   f += 0.002
-//   for (j = 1; j < 6; j++) {
-//     stroke(map(j, 0, 5, 255, 32), 0, map(j, 0, 5, 255, 32));
-//     s = f * pow(1.8, j)
-
-//     for (i = 0; i < 800; i++) {
-//       line(i, j * 90 + 200 - noise(s + i / 200) * 400, i, 800)
-//     }
-//   }
+  
   push()
 
 
   translate(50, 100)
   scale(0.85)
   
+  // gear1Draw()
+  // translate (200, 0)
+  // gear2Draw()
   push()
   translate (-110, -30)
   scale (1.2)
@@ -106,13 +88,13 @@ function draw() {
 
 
 
-
 }
 
 
 function lightbulbDraw()
 {
-  // angleMode (DEGREES)
+  push()
+  angleMode (DEGREES)
   noStroke()
    var lightBlue = color ('#256eaf')
   var lightestBlue = color('#8ed6ef')
@@ -143,7 +125,7 @@ arc (570, 345, 22, 20, 0, 180)
   rect (543, 440, 100, 10, 5)
    rect (543, 455, 100, 10, 5)
   rect (543, 470, 100, 10, 5)
-  
+  pop()
   
   
   
@@ -208,21 +190,76 @@ fill (255)
   circle(150, 245, 80)
    fill(lightPink)// light pink
   circle(150, 245, 30)
+  
+  var angleStart = 0
+  stroke (255)
+  noFill()
+  strokeWeight (2)
+push()
+  translate (150, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
 
+
+  noStroke()
   fill (darkBlue)// dark blue
   circle(265, 245, 80)
    fill(lightPink)// light pink
   circle(265, 245, 30)
+  
+   stroke (255)
+  noFill()
+  strokeWeight (2)
+  push()
+  translate (265, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
+
+
+  noStroke()
 
   fill (darkBlue)// dark blue
   circle(380, 245, 80)
   fill(lightPink)// light pink
   circle(380, 245, 30)
+  
+    stroke (255)
+  noFill()
+  strokeWeight (2)
+  push()
+  translate (380, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
+
+
+  noStroke()
 
   fill(255)
   // base of second compartment
    fill (lightBlue)
   rect(465, 195, 340, 50, 15)
+  
 
   //wheels of second compartment
 
@@ -230,17 +267,71 @@ fill (255)
   circle(520, 245, 80)
   fill(lightPink)// light pink
   circle(520, 245, 30)
+  
+    stroke (255)
+  noFill()
+  strokeWeight (2)
+  push()
+  translate (520, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
+
+
+  noStroke()
 
   fill (darkBlue)// dark blue
   circle(635, 245, 80)
   fill(lightPink)// light pink
   circle(635, 245, 30)
+  
+    stroke (255)
+  noFill()
+  strokeWeight (2)
+  push()
+  translate (635, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
+
+
+  noStroke()
 
   fill (darkBlue)// dark blue
   circle(750, 245, 80)
   fill(lightPink)// light pink
   circle(750, 245, 30)
   fill (255)
+  
+    stroke (255)
+  noFill()
+  strokeWeight (2)
+  push()
+  translate (750, 245)
+  for (var angleStart = 0; angleStart <= 4; angleStart+=1)
+    {
+      
+      rotate (frameCount * 2)
+  arc (0, 0, 70, 70, 0, 50)
+       
+       
+    }
+  pop()
+
+
+  noStroke()
 
   //second compartment
   fill('rgba(244, 186, 229, 0.5)')
@@ -254,10 +345,12 @@ fill (255)
 }
 
 
+
+
 function brainDraw() {
   noStroke();
   fill('#eaade4')
-  fill ('#e5aac9')
+  fill ('#f4bae5')
   // arc (300, 300, 40, 40, 0, 40);
   circle(300, 305, 30)
   circle(280, 310, 35)
@@ -278,6 +371,7 @@ function brainDraw() {
 
   //white highlights
   stroke(255)
+  strokeWeight(3);
   arc(255, 257, 28, 28, -170, 0)
   arc(295, 255, 28, 28, -130, -45)
   arc(258, 305, 28, 28, 50, 195)
@@ -309,6 +403,66 @@ function brainDraw() {
 
 
 
+}
 
 
+function gear1Draw()
+{
+  noStroke()
+  
+  
+  fill(100)
+  push()
+  // rotate (frameCount)
+  for (var i = 0; i < 24; i++){
+    // translate (5, 5)
+    
+    rotate (20)
+    triangle (0, 0, 30, 0, 15, -15)
+  }
+  pop()
+  
+  fill(255)
+  circle (0, 0, 20)
+   
+  
+}
+
+function gear2Draw()
+{
+    fill(100)
+  circle (0, 0,150)
+  
+  //  fill(255)
+  // circle (0, 0, 100)
+  
+  fill(100)
+  rect (0, 0, 20, 100)
+  push()
+  
+  for (var i = 0; i < 24; i++){
+    // translate (5, 5)
+    rotate (15)
+    rect (0, 0, 20, 100)
+  }
+  pop()
+  
+  
+//   fill(100)
+//   circle (0, 0,150)
+  
+//   //  fill(255)
+//   // circle (0, 0, 100)
+  
+//   fill(100)
+//   push()
+  
+//   for (var i = 0; i < 24; i++){
+//     // translate (5, 5)
+//     rotate (15)
+//     rect (0, 0, 20, 100)
+  // pop()
+  
+  fill(255)
+  circle (0, 0, 100)
 }
